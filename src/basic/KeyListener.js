@@ -2,7 +2,7 @@
 class KeyListener {
     constructor(caster) {
         this.keys = {}
-        this.caster = caster || console.log;
+        // this.caster = caster || console.log;
     }
 
     setCaster( caster){
@@ -12,15 +12,16 @@ class KeyListener {
     down = (e) => {
         if(this.keys[e.keyCode]) return
         this.keys[e.keyCode] = true
-        this.caster([e.keyCode, true, this.keys])
+        // this.caster([e.keyCode, true, this.keys])
     } 
     up = (e) => {
         this.keys[e.keyCode] = false
-        this.caster([e.keyCode, false, this.keys])
+        // this.caster([e.keyCode, false, this.keys])
     } 
 
     isPressed (keyCode){
-        return (this.keys[keyCode] ? this.keys[keyCode] : false)
+        console.log(this.keys[keyCode] )
+        return this.keys[keyCode]
     }
 
     start (){
